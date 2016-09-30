@@ -1,0 +1,18 @@
+<resources>
+
+    <dimen name="WORD_TITLE">20sp</dimen>
+    <dimen name="WORD_BUTTON">18sp</dimen>
+    <dimen name="WORD_LEVEL_1">16sp</dimen>
+
+    <dimen name="SIZE_LINE">1dp</dimen>
+
+    <dimen name="SIZE_LOGO">120dp</dimen>
+    <dimen name="SIZE_TITLE">48dp</dimen>
+    <dimen name="SIZE_CHECKBOX">20dp</dimen>
+    <dimen name="SIZE_BOTTOM">56dp</dimen>
+    <dimen name="SIZE_INTERVAL">16dp</dimen>
+    <dimen name="SIZE_INTERVAL_MORE">12dp</dimen>
+    <dimen name="SIZE_INTERVAL_HALF">8dp</dimen>
+    <dimen name="SIZE_INTERVAL_QUARTER">4dp</dimen>
+
+</resources>

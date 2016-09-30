@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Local Album Application</string>
+
+    <string name="bt_sure">确定</string>
+    <string name="bt_all">全选</string>
+
+    <string name="title_all_photo">全部图像</string>
+
+
+</resources>

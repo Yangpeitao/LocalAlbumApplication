@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hddata.localalbumapplication.View.MainActivity">
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/title_text"
+        android:id="@+id/include4"/>
+
+    <GridView
+        android:id="@+id/p0802_gv_carrier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/p0802_ly_all"
+        android:layout_marginLeft="@dimen/SIZE_INTERVAL_MORE"
+        android:layout_marginRight="@dimen/SIZE_INTERVAL_MORE"
+        android:background="@color/WHITE_COMMON"
+        android:divider="@null"
+        android:listSelector="@color/WHITE_COMMON"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:transcriptMode="alwaysScroll"
+        android:layout_below="@+id/include4"/>
+
+    <RelativeLayout
+        android:id="@+id/p0802_ly_all"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/SIZE_BOTTOM"
+        android:layout_alignParentBottom="true"
+        android:background="@color/TITLE_COMMON">
+
+        <ImageView
+            android:layout_width="@dimen/SIZE_CHECKBOX"
+            android:layout_height="@dimen/SIZE_CHECKBOX"
+            android:src="@mipmap/icon_checkbox_off"
+            android:layout_marginLeft="@dimen/SIZE_INTERVAL"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/p0802_iv_all"/>
+
+        <TextView
+            android:id="@+id/textView22"
+            style="@style/text_common"
+            android:layout_toEndOf="@+id/p0802_iv_all"
+            android:layout_toRightOf="@+id/p0802_iv_all"
+            android:text="@string/bt_all"
+            android:textColor="@color/WHITE_COMMON"
+            android:textSize="@dimen/WORD_BUTTON"/>
+
+    </RelativeLayout>
+</RelativeLayout>

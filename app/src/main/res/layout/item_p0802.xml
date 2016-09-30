@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/SIZE_LOGO"
+        android:padding="@dimen/SIZE_INTERVAL_QUARTER">
+
+        <ImageView
+            android:id="@+id/item_p0802_iv_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/item_p0802_iv_checkout"
+            android:layout_width="@dimen/SIZE_CHECKBOX"
+            android:layout_height="@dimen/SIZE_CHECKBOX"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/WHITE_COMMON"
+            android:src="@mipmap/icon_checkbox_off"/>
+    </RelativeLayout>
+</RelativeLayout>

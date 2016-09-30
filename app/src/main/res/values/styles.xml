@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="text_common">
+        <item name="android:textSize">@dimen/WORD_LEVEL_1</item>
+        <item name="android:textColor">@color/BLACK_COMMON</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/SIZE_INTERVAL</item>
+        <item name="android:layout_marginRight">@dimen/SIZE_INTERVAL</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+</resources>
