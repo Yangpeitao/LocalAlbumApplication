@@ -1,22 +1,15 @@
 package com.personal.localalbum.Info;
 
 /**
- * Created by ustc on 2016/9/27.
+ * 本地相册的操作类
+ * Created by 杨培韬 on 2016/9/27.
  */
 
 public class AlbumPhoto {
     /**
-     * 原图URI
-     */
-    private String originalUri;
-    /**
      * 原图的存储路径
      */
     private String path;
-    /**
-     * 缩略图URI
-     */
-    private String thumbnailUri;
     /**
      * 图片旋转角度
      */
@@ -24,9 +17,7 @@ public class AlbumPhoto {
 
     private boolean check;
 
-    public AlbumPhoto(String originalUri, String thumbnailUri, String path, int orientation) {
-        this.originalUri = originalUri;
-        this.thumbnailUri = thumbnailUri;
+    public AlbumPhoto(String path, int orientation) {
         this.path = path;
         this.orientation = orientation;
         this.check = false;
@@ -34,14 +25,6 @@ public class AlbumPhoto {
 
     public String getPath() {
         return path;
-    }
-
-    public String getThumbnailUri() {
-        return thumbnailUri;
-    }
-
-    public String getOriginalUri() {
-        return originalUri;
     }
 
     public int getOrientation() {

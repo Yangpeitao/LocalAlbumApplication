@@ -25,9 +25,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private final static int SCAN = 1;
-    public int selectCount = 0;
-    private ImageView ivAll;
-    private TextView tvSure;
+    public static int selectCount = 0;
+    private static ImageView ivAll;
+    private static TextView tvSure;
     private TextView tvTitle;
     private RelativeLayout lyAll;
     private GridView gvPhoto;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public void preformAllButtom(boolean ret) {
+    public static void preformAllButton(boolean ret) {
 
         CommonFunction.setCheckboxIcon(ivAll, ret);
         if (selectCount > 0) {
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 updateList();
-                preformAllButtom(!ret);
+                preformAllButton(!ret);
             }
         });
         this.tvSure.setOnClickListener(new View.OnClickListener() {
@@ -94,20 +94,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        this.gvPhoto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AlbumPhoto photo = (AlbumPhoto) view.getTag();
-                photo.changeCheck();
-                if (photo.isCheck()) {
-                    selectCount++;
-                } else {
-                    selectCount--;
-                }
-                updateList();
-                preformAllButtom(selectCount == photoList.size());
-            }
-        });
+//        this.gvPhoto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                AlbumPhoto photo = (AlbumPhoto) view.getTag();
+//                photo.changeCheck();
+//                if (photo.isCheck()) {
+//                    selectCount++;
+//                } else {
+//                    selectCount--;
+//                }
+//                updateList();
+//                preformAllButton(selectCount == photoList.size());
+//            }
+//        });
     }
 
     private void initView() {

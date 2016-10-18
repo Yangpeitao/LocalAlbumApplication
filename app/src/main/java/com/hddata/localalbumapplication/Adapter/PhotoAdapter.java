@@ -1,6 +1,7 @@
 package com.hddata.localalbumapplication.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 
 import com.hddata.localalbumapplication.Common.CommonFunction;
 import com.hddata.localalbumapplication.R;
+import com.hddata.localalbumapplication.View.MainActivity;
 import com.personal.localalbum.Info.AlbumPhoto;
 import com.personal.localalbum.Util.AlbumImageUtil;
 
@@ -48,8 +50,8 @@ public class PhotoAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        ItemView view = new ItemView();
-        AlbumPhoto photo = list.get(position);
+        final ItemView view = new ItemView();
+        final AlbumPhoto photo = list.get(position);
         convertView = this.inflater.inflate(R.layout.item_p0802, null);
 
         view.ivPicture = (ImageView) convertView.findViewById(R.id.item_p0802_iv_picture);
@@ -62,6 +64,22 @@ public class PhotoAdapter extends BaseAdapter {
         } else {
             view.ivCheckbox.setVisibility(View.GONE);
         }
+
+        view.ivCheckbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                photo.changeCheck();
+                if (photo.isCheck()) {
+                    MainActivity.selectCount++;
+                    view.ivPicture.setColorFilter(Color.parseColor("#77000000"));
+                } else {
+                    MainActivity.selectCount--;
+                    view.ivPicture.setColorFilter(null);
+                }
+                CommonFunction.setCheckboxIcon(view.ivCheckbox, photo.isCheck());
+                MainActivity.preformAllButton(MainActivity.selectCount == list.size());
+            }
+        });
 
         convertView.setTag(photo);
         return convertView;
