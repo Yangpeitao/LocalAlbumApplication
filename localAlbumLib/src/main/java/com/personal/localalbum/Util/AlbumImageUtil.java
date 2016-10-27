@@ -62,7 +62,11 @@ public class AlbumImageUtil {
     }
 
     public static void showImage(Context context, ImageView iv, AlbumPhoto photo) {
-        iv.setImageResource(R.mipmap.image_default);
-        ImageLoader.getInstance().loadImage(photo.getPath(), iv);
+        showImage(context, iv, photo.getPath(), R.mipmap.image_default);
+    }
+
+    public static void showImage(Context context, ImageView iv, String path, int defaultImage) {
+        iv.setImageResource(defaultImage);
+        ImageLoader.getInstance().loadImage(path, iv);
     }
 }
