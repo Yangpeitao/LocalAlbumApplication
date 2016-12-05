@@ -32,14 +32,16 @@ public class AlbumImageUtil {
                         "image/jpeg", "image/png"
                 },
                 MediaStore.Images.Media.DATE_MODIFIED + " DESC"); //根据时间降序
-        if (cursor.moveToFirst()) {
-            do {
-                String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));//大图路径
-                File file = new File(path);
-                //判断大图是否存在
-                if (file.exists()) {
-                    //获取目录名
-                    String parentName = file.getParentFile().getName();
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));//大图路径
+                    File file = new File(path);
+                    //判断大图是否存在
+                    if (file.exists()) {
+                        //获取目录名
+                        String parentName = file.getParentFile().getName();
 
 //                    if ((parentName.contains("Camera"))
 //                            || (parentName.contains("camera"))) {
@@ -54,10 +56,12 @@ public class AlbumImageUtil {
                         list.add(photo);
 //                    }
 
-                }
-            } while (cursor.moveToNext());
+                    }
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
         }
-        cursor.close();
+
         return list;
     }
 
